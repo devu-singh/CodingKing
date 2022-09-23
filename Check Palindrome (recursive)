@@ -1,0 +1,51 @@
+Check Palindrome (recursive)
+Send Feedback
+Check whether a given String S is a palindrome using recursion. Return true or false.
+Input Format :
+String S
+Output Format :
+'true' or 'false'
+Constraints :
+0 <= |S| <= 1000
+where |S| represents length of string S.
+Sample Input 1 :
+racecar
+Sample Output 1:
+true
+Sample Input 2 :
+ninja
+Sample Output 2:
+false
+
+
+
+
+// Solution
+
+
+public class CheckPalindrome {
+	public static String reverse(String str) {
+		if(str.length()<=1) {
+			return str;
+		}
+		return reverse(str.substring(1))+str.charAt(0);
+	}
+	public static boolean checkPalindrome(String s) {
+		if(s.length()<=1) {
+			return true;
+		}
+		if(s.charAt(0)==s.charAt(s.length()-1)) {
+			return checkPalindrome(s.substring(1, s.length()-1));
+		}
+		return false;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "racecar";
+		System.out.println(checkPalindrome(s));
+		System.out.println(reverse(s));
+
+	}
+
+}
