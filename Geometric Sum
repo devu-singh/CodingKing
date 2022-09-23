@@ -1,0 +1,24 @@
+/*  Geometric Sum
+Send Feedback
+Given k, find the geometric sum i.e.
+1 + 1/2 + 1/4 + 1/8 + ... + 1/(2^k) 
+
+*/
+
+//main code 
+
+public class GeometricSum {
+	public static double geometricSum(int n) {
+		if(n<0) {
+			return 0;
+		}
+		return 1/Math.pow(2, n)+geometricSum(n-1);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(geometricSum(3));
+
+	}
+
+}
